@@ -1,9 +1,9 @@
 "use client"
 
-import { ContactForm } from "@/components/contact-form"
+import { ContactForm } from "@/app/components/contact-form"
 import { Mail, Phone, MapPin, Clock, Users, Award } from "lucide-react"
-import MotionContainer from "@/components/animations/motion-container"
-import MotionItem from "@/components/animations/motion-item"
+import MotionContainer from "@/app/components/animations/motion-container"
+import MotionItem from "@/app/components/animations/motion-item"
 import { motion } from "framer-motion"
 
 const contactInfo = [

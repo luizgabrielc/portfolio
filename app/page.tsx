@@ -1,13 +1,13 @@
 "use client"
 
-import { Header } from "@/components/header"
-import { ScrollToTopButton } from "@/components/scroll-to-top-button"
-import { HeroSection } from "@/components/sections/hero-section"
-import { ServicesSection } from "@/components/sections/services-section"
-import { AboutSection } from "@/components/sections/about-section"
-import { PortfolioSection } from "@/components/sections/portfolio-section"
-import { ContactSection } from "@/components/sections/contact-section"
-import { FooterSection } from "@/components/sections/footer-section"
+import { Header } from "@/app/components/header"
+import { ScrollToTopButton } from "@/app/components/scroll-to-top-button"
+import { HeroSection } from "@/app/components/sections/hero-section"
+import { ServicesSection } from "@/app/components/sections/services-section"
+import { AboutSection } from "@/app/components/sections/about-section"
+import { PortfolioSection } from "@/app/components/sections/portfolio-section"
+import { ContactSection } from "@/app/components/sections/contact-section"
+import { FooterSection } from "@/app/components/sections/footer-section"
 
 export default function Portfolio() {
   return (

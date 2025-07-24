@@ -1,9 +1,9 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import ThemeToggle from "@/components/theme-toggle"
-import { HireMeModal } from "@/components/hire-me-modal"
-import { smoothScrollTo, scrollToTop } from "@/components/smooth-scroll"
+import { Button } from "@/shadcnui/ui/button"
+import ThemeToggle from "@/app/components/theme-toggle"
+import { HireMeModal } from "@/app/components/hire-me-modal"
+import { smoothScrollTo, scrollToTop } from "@/app/components/smooth-scroll"
 import { Menu } from "lucide-react"
 import { useState } from "react"
 
@@ -50,7 +50,7 @@ export function Header() {
             <ThemeToggle />
             <HireMeModal>
               <Button className="bg-orange-500 hover:bg-orange-600 transition-all duration-200 hover:scale-105 hover:shadow-lg">
-                Hire Me
+                Contrate-me
               </Button>
             </HireMeModal>
           </div>
@@ -86,7 +86,7 @@ export function Header() {
             ))}
             <HireMeModal>
               <Button className="w-full bg-orange-500 hover:bg-orange-600 transition-all duration-200 mt-2">
-                Hire Me
+                Contrate-me
               </Button>
             </HireMeModal>
           </div>

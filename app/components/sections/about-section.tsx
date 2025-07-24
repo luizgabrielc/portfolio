@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/shadcnui/ui/button";
 import { Download } from "lucide-react";
-import MotionContainer from "@/components/animations/motion-container";
-import MotionItem from "@/components/animations/motion-item";
+import MotionContainer from "@/app/components/animations/motion-container";
+import MotionItem from "@/app/components/animations/motion-item";
 
 const skills = [
   { percentage: 100, skill: "Figma" },

@@ -2,12 +2,12 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Button } from "@/shadcnui/ui/button"
+import { Card } from "@/shadcnui/ui/card"
+import { Badge } from "@/shadcnui/ui/badge"
 import { ChevronLeft, ChevronRight, ExternalLink, Github } from "lucide-react"
-import MotionContainer from "@/components/animations/motion-container"
-import MotionItem from "@/components/animations/motion-item"
+import MotionContainer from "@/app/components/animations/motion-container"
+import MotionItem from "@/app/components/animations/motion-item"
 
 interface Project {
   id: number

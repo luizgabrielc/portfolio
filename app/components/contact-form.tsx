@@ -3,11 +3,11 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
+import { Button } from "@/shadcnui/ui/button"
+import { Card, CardContent } from "@/shadcnui/ui/card"
+import { Input } from "@/shadcnui/ui/input"
+import { Textarea } from "@/shadcnui/ui/textarea"
+import { Label } from "@/shadcnui/ui/label"
 import { MessageCircle, Mail } from "lucide-react"
 import { motion } from "framer-motion"
 

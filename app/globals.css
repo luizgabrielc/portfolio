@@ -126,13 +126,19 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* Improved transitions for theme switching */
-* {
+/* * {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow,
     transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
-}
+} */
 
 /* Custom scrollbar for dark mode */
 ::-webkit-scrollbar {
@@ -196,6 +202,7 @@ img {
 }
 
 .card-hover:hover {
+  @apply transition-all ease-in-out;
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }

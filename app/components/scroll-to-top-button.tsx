@@ -1,9 +1,9 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/shadcnui/ui/button"
 import { ArrowUp } from "lucide-react"
-import { scrollToTop } from "@/components/smooth-scroll"
+import { scrollToTop } from "@/app/components/smooth-scroll"
 import { motion, AnimatePresence } from "framer-motion"
 
 export function ScrollToTopButton() {

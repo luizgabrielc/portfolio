@@ -3,11 +3,11 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Button } from "@/shadcnui/ui/button"
+import { Input } from "@/shadcnui/ui/input"
+import { Textarea } from "@/shadcnui/ui/textarea"
+import { Label } from "@/shadcnui/ui/label"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/shadcnui/ui/dialog"
 import { MessageCircle, Mail, Briefcase, Clock, DollarSign } from "lucide-react"
 
 interface HireMeModalProps {
