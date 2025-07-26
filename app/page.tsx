@@ -15,10 +15,6 @@ export default function Portfolio() {
 
       {/* Header */}
       <Header />
-
-      {/* Spacer for fixed header */}
-      <div className="h-20"></div>
-
       {/* Sections */}
       <HeroSection />
       <ServicesSection />

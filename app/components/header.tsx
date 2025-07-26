@@ -5,11 +5,16 @@ import ThemeToggle from "@/app/components/theme-toggle"
 import { HireMeModal } from "@/app/components/hire-me-modal"
 import { smoothScrollTo, scrollToTop } from "@/app/components/smooth-scroll"
 import { Menu } from "lucide-react"
-import { useState } from "react"
+import Image from "next/image"
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/shadcnui/ui/drawer"
 
 export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
   const navItems = [
     { name: "Home", action: scrollToTop },
     { name: "Services", action: () => smoothScrollTo("services") },
@@ -18,38 +23,33 @@ export function Header() {
     { name: "Contact Us", action: () => smoothScrollTo("contact") },
   ]
 
-  const handleNavClick = (action: () => void) => {
-    action()
-    setMobileMenuOpen(false)
-  }
-
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800`}
+      className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 py-3 sm:py-4 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         <div
-          className="text-2xl font-bold text-orange-500 cursor-pointer hover:scale-105 transition-transform duration-200"
+          className="text-xl sm:text-2xl font-bold text-orange-500 cursor-pointer"
           onClick={scrollToTop}
         >
-          LOGO
+          <Image src="/logo-portfolio.svg" alt="Logo" width={28} height={28} className="sm:w-8 sm:h-8" />
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
           {navItems.map((item) => (
             <button
               key={item.name}
               onClick={() => item.action()}
-              className="text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-500 transition-all duration-200 hover:scale-105"
+              className="text-gray-700 cursor-pointer dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-500 transition-all text-sm lg:text-base"
             >
               {item.name}
             </button>
           ))}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 lg:gap-4">
             <ThemeToggle />
             <HireMeModal>
-              <Button className="bg-orange-500 hover:bg-orange-600 transition-all duration-200 hover:scale-105 hover:shadow-lg">
+              <Button className="bg-orange-500 hover:bg-orange-600 transition-all hover:shadow-lg text-xs sm:text-sm px-3 sm:px-4 py-2">
                 Contrate-me
               </Button>
             </HireMeModal>
@@ -57,41 +57,43 @@ export function Header() {
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="flex items-center gap-4 md:hidden">
+        <div className="flex items-center gap-3 sm:gap-4 md:hidden">
           <ThemeToggle />
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-gray-700 dark:text-gray-300"
-          >
-            <Menu className="h-6 w-6" />
-            <span className="sr-only">Toggle menu</span>
-          </Button>
+          <Drawer>
+            <DrawerTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-gray-700 dark:text-gray-300"
+              >
+                <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </DrawerTrigger>
+            <DrawerContent>
+              <DrawerHeader>
+                <DrawerTitle className="text-center">Menu</DrawerTitle>
+              </DrawerHeader>
+              <div className="px-4 py-4 space-y-2 sm:space-y-3">
+                {navItems.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => item.action()}
+                    className="block w-full text-left py-2 sm:py-3 text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-500 transition-colors duration-200 text-sm sm:text-base"
+                  >
+                    {item.name}
+                  </button>
+                ))}
+                <HireMeModal>
+                  <Button className="w-full bg-orange-500 hover:bg-orange-600 transition-all duration-200 mt-3 sm:mt-4 text-sm sm:text-base py-2 sm:py-3">
+                    Contrate-me
+                  </Button>
+                </HireMeModal>
+              </div>
+            </DrawerContent>
+          </Drawer>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 transition-all duration-300">
-          <div className="px-6 py-4 space-y-3">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavClick(item.action)}
-                className="block w-full text-left py-2 text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-500 transition-colors duration-200"
-              >
-                {item.name}
-              </button>
-            ))}
-            <HireMeModal>
-              <Button className="w-full bg-orange-500 hover:bg-orange-600 transition-all duration-200 mt-2">
-                Contrate-me
-              </Button>
-            </HireMeModal>
-          </div>
-        </div>
-      )}
     </header>
   )
 }

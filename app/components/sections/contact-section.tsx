@@ -1,90 +1,76 @@
 "use client"
 
 import { ContactForm } from "@/app/components/contact-form"
-import { Mail, Phone, MapPin, Clock, Users, Award } from "lucide-react"
+import { Mail, Phone, MapPin, Clock } from "lucide-react"
 import MotionContainer from "@/app/components/animations/motion-container"
 import MotionItem from "@/app/components/animations/motion-item"
 import { motion } from "framer-motion"
 
 const contactInfo = [
-  { icon: Mail, title: "Email", info: "seu.email@gmail.com" },
-  { icon: Phone, title: "WhatsApp", info: "+55 (11) 99999-9999" },
-  { icon: MapPin, title: "Localização", info: "São Paulo, Brasil" },
+  { icon: Mail, title: "Email", info: "gabrielca.dev@gmail.com" },
+  { icon: Phone, title: "WhatsApp", info: "+55 (98) 99247-2146" },
+  { icon: MapPin, title: "Localização", info: "São Luís, Brasil" },
   { icon: Clock, title: "Horário de Atendimento", info: "Segunda à Sexta: 9h às 18h" },
 ]
 
-const stats = [
-  { icon: Users, number: "80+", label: "Clientes Felizes" },
-  { icon: Award, number: "20+", label: "Projetos" },
-  { icon: Clock, number: "5+", label: "Anos" },
-]
 
 export function ContactSection() {
   return (
     <section
       id="contact"
-      className="px-6 py-20 bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white transition-all duration-500 min-h-screen flex items-center"
+      className="px-4 sm:px-6 py-16 sm:py-20 bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white transition-all duration-500 min-h-screen flex items-center"
     >
       <div className="max-w-7xl mx-auto w-full">
-        <MotionContainer className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-6 transition-colors duration-300">Contact Us</h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto transition-colors duration-300 text-lg">
-            Vamos trabalhar juntos! Entre em contato comigo através do formulário abaixo ou pelas minhas redes sociais.
-          </p>
+        <MotionContainer className="text-center mb-12 sm:mb-16">
+          <MotionItem delay={0.1}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 transition-colors duration-300">Contact Us</h2>
+          </MotionItem>
+          <MotionItem delay={0.2}>
+            <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto transition-colors duration-300 text-sm sm:text-base lg:text-lg px-4">
+              Vamos trabalhar juntos! Entre em contato comigo através do formulário abaixo ou pelas minhas redes sociais.
+            </p>
+          </MotionItem>
         </MotionContainer>
 
-        <div className="grid md:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Contact Info */}
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             <div>
-              <MotionContainer className="mb-8">
-                <h3 className="text-3xl font-bold transition-colors duration-300">Informações de Contato</h3>
+              <MotionContainer className="mb-6 sm:mb-8" delay={0.3}>
+                <MotionItem delay={0.1}>
+                  <h3 className="text-2xl sm:text-3xl font-bold transition-colors duration-300">Informações de Contato</h3>
+                </MotionItem>
               </MotionContainer>
-              <MotionItem className="space-y-8">
+              <MotionContainer className="space-y-6 sm:space-y-8" delay={0.4}>
                 {contactInfo.map((contact, index) => (
-                  <motion.div key={index} className="flex items-center gap-6 group">
-                    <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
-                      <contact.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-xl transition-colors duration-300">{contact.title}</h4>
-                      <p className="text-gray-600 dark:text-gray-400 text-lg transition-colors duration-300">
-                        {contact.info}
-                      </p>
-                    </div>
-                  </motion.div>
+                  <MotionItem key={index} delay={index * 0.1}>
+                    <motion.div className="flex items-center gap-4 sm:gap-6 group">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-500 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+                        <contact.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-lg sm:text-xl transition-colors duration-300">{contact.title}</h4>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base lg:text-lg transition-colors duration-300">
+                          {contact.info}
+                        </p>
+                      </div>
+                    </motion.div>
+                  </MotionItem>
                 ))}
-              </MotionItem>
+              </MotionContainer>
             </div>
 
-            {/* Stats */}
-            <MotionItem className="grid grid-cols-3 gap-6">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center p-6 bg-white/50 dark:bg-gray-800/30 rounded-lg transition-all duration-300 hover:bg-white/80 dark:hover:bg-gray-800/50"
-                >
-                  <stat.icon className="w-10 h-10 text-orange-500 mx-auto mb-3 transition-colors duration-300" />
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                    className="text-3xl font-bold transition-colors duration-300"
-                  >
-                    {stat.number}
-                  </motion.div>
-                  <div className="text-gray-600 dark:text-gray-400 text-base transition-colors duration-300">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
-            </MotionItem>
+            
           </div>
 
           {/* Contact Form */}
-          <MotionContainer className="flex items-center justify-center">
-            <h3 className="text-3xl font-bold mb-8 transition-colors duration-300">Envie uma Mensagem</h3>
-            <ContactForm />
+          <MotionContainer className="flex flex-col items-center justify-center" delay={0.6}>
+            <MotionItem delay={0.1}>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 transition-colors duration-300">Envie uma Mensagem</h3>
+            </MotionItem>
+            <MotionItem delay={0.2} className="w-full">
+              <ContactForm />
+            </MotionItem>
           </MotionContainer>
         </div>
       </div>

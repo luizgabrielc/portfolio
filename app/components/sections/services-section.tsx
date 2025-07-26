@@ -2,7 +2,6 @@
 
 import MotionContainer from "@/app/components/animations/motion-container"
 import MotionItem from "@/app/components/animations/motion-item"
-import { motion } from "framer-motion"
 
 const services = [
   {
@@ -41,38 +40,42 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="px-6 py-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-all duration-500 min-h-screen flex items-center"
+      className="px-4 sm:px-6 py-16 sm:py-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-all duration-500 min-h-screen flex items-center"
     >
       <div className="max-w-7xl mx-auto w-full">
-        <MotionContainer className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-6 transition-colors duration-300">
-            Services
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-lg transition-colors duration-300">
-            Ofereço soluções completas em design e desenvolvimento, desde a concepção até a implementação final do seu
-            projeto.
-          </p>
+        <MotionContainer className="text-center mb-12 sm:mb-16">
+          <MotionItem delay={0.1}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 transition-colors duration-300">
+              Services
+            </h2>
+          </MotionItem>
+          <MotionItem delay={0.2}>
+            <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-base sm:text-lg transition-colors duration-300 px-4">
+              Ofereço soluções completas em design e desenvolvimento, desde a concepção até a implementação final do seu
+              projeto.
+            </p>
+          </MotionItem>
         </MotionContainer>
-        <MotionItem className="grid md:grid-cols-3 gap-10">
+        
+        <MotionContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10" delay={0.3}>
           {services.map((service, index) => (
-            <motion.div
-              key={index}
-              className="bg-white dark:bg-gray-800/30 p-10 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
-            >
-              <div className="w-16 h-16 text-orange-500 mb-8 transition-colors duration-300">
-                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d={service.icon} />
-                </svg>
+            <MotionItem key={index} delay={index * 0.1}>
+              <div className="bg-white dark:bg-gray-800/30 p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 dark:border-gray-800 transition-all duration-300 cursor-pointer group hover:shadow-lg hover:shadow-gray-200 dark:hover:shadow-gray-800 hover:-translate-y-1">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-orange-500 mb-6 sm:mb-8 transition-all duration-300 group-hover:text-orange-600">
+                  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d={service.icon} />
+                  </svg>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-orange-500 transition-colors duration-300 group-hover:text-orange-600">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base lg:text-lg leading-relaxed transition-colors duration-300 group-hover:text-gray-700 dark:group-hover:text-gray-300">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="text-2xl font-semibold mb-4 text-orange-500 transition-colors duration-300">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed transition-colors duration-300">
-                {service.description}
-              </p>
-            </motion.div>
+            </MotionItem>
           ))}
-        </MotionItem>
+        </MotionContainer>
       </div>
     </section>
   )

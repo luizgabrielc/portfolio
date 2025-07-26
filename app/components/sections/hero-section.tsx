@@ -3,93 +3,102 @@
 import Image from "next/image";
 import { Button } from "@/shadcnui/ui/button";
 import { HireMeModal } from "@/app/components/hire-me-modal";
-import { Github, Instagram, Linkedin } from "lucide-react";
+import { Award, Clock, Users } from "lucide-react";
 import MotionContainer from "@/app/components/animations/motion-container";
-import Link from "next/link";
+import MotionItem from "@/app/components/animations/motion-item";
+import { DownloadCVButton } from "@/app/components/download-cv-button";
+import { motion } from "framer-motion";
 
+const stats = [
+  { icon: Users, number: "80+", label: "Clientes Felizes" },
+  { icon: Award, number: "20+", label: "Projetos" },
+  { icon: Clock, number: "5+", label: "Anos" },
+]
 export function HeroSection() {
   return (
-    <section className="px-6 py-16 bg-gray-900 dark:bg-gray-950 text-white transition-all duration-500 min-h-screen flex items-center">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
+    <section className="px-4 sm:px-6 py-12 sm:py-16 bg-gray-900 dark:bg-gray-950 text-white transition-all duration-500 min-h-screen flex items-center">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
         <div>
-          <MotionContainer className="flex flex-col gap-4">
-            <p className="text-gray-400 mb-2 transition-colors duration-300 text-2xl">
-              Olá, sou
-            </p>
-            <p className="text-gray-300 text-5xl mb-2 transition-colors duration-300">
-              Luiz Gabriel
-            </p>
-            <h1 className="text-6xl md:text-7xl font-bold text-orange-500 mb-12 transition-all duration-300">
-              Desenvolvedor Full Stack
-            </h1>
+          <MotionContainer className="flex flex-col gap-6">
+            {/* Introdução */}
+            <MotionItem delay={0.1}>
+              <div className="space-y-2">
+                <p className="text-gray-400 transition-colors duration-300 text-lg sm:text-xl lg:text-2xl">
+                  Olá, sou
+                </p>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-300 transition-colors duration-300">
+                  Luiz Gabriel
+                </h2>
+              </div>
+            </MotionItem>
 
-            {/* Social Icons */}
-            <div className="flex gap-6 mb-12">
-              <Link href="https://www.instagram.com/luizgabriel.dev/" target="_blank" className="w-12 h-12 border border-gray-600 dark:border-gray-500 rounded flex items-center justify-center hover:border-orange-500 transition-all duration-300 cursor-pointer">
-                <Instagram className="w-6 h-6 text-gray-400 hover:text-orange-500 transition-colors duration-200" />
-              </Link>
-              <Link href="https://www.linkedin.com/in/luizgabrieldev/" target="_blank" className="w-12 h-12 border border-gray-600 dark:border-gray-500 rounded flex items-center justify-center hover:border-orange-500 transition-all duration-300 cursor-pointer">
-                <Linkedin className="w-6 h-6 text-gray-400 hover:text-orange-500 transition-colors duration-200" />
-              </Link>
-              <Link href="https://github.com/luizgabrieldev" target="_blank" className="w-12 h-12 border border-gray-600 dark:border-gray-500 rounded flex items-center justify-center hover:border-orange-500 transition-all duration-300 cursor-pointer">
-                <Github className="w-6 h-6 text-gray-400 hover:text-orange-500 transition-colors duration-200" />
-              </Link>
-            </div>
+            {/* Título Principal */}
+            <MotionItem delay={0.2}>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-orange-500 transition-all duration-300 leading-tight">
+                Desenvolvedor Full Stack
+              </h1>
+            </MotionItem>
+
+            {/* Descrição Convite */}
+            <MotionItem delay={0.3}>
+              <div className="space-y-4">
+                <p className="text-gray-300 text-lg sm:text-xl lg:text-2xl leading-relaxed transition-colors duration-300">
+                  Transformando ideias em <span className="text-orange-400 font-semibold">experiências digitais</span> que inspiram e conectam pessoas.
+                </p>
+                <p className="text-gray-400 text-base sm:text-lg leading-relaxed transition-colors duration-300">
+                  Especializado em criar soluções web modernas e escaláveis, combinando design intuitivo com tecnologia de ponta para entregar projetos que fazem a diferença.
+                </p>
+              </div>
+            </MotionItem>
+
+            {/* Stats */}
+            <MotionContainer className="grid grid-cols-3 gap-4 sm:gap-6" delay={0.4}>
+              {stats.map((stat, index) => (
+                <MotionItem key={index} delay={index * 0.1}>
+                  <motion.div
+                    className="text-center p-4 sm:p-6 bg-gray-800/30 rounded-lg transition-all duration-300 hover:bg-gray-800/50"
+                  >
+                    <stat.icon className="w-8 h-8 sm:w-10 sm:h-10 text-orange-500 mx-auto mb-2 sm:mb-3 transition-colors duration-300" />
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.5 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                      className="text-2xl sm:text-3xl font-bold transition-colors duration-300"
+                    >
+                      {stat.number}
+                    </motion.div>
+                    <div className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm lg:text-base transition-colors duration-300">
+                      {stat.label}
+                    </div>
+                  </motion.div>
+                </MotionItem>
+              ))}
+            </MotionContainer>
 
             {/* Buttons */}
-            <div className="flex gap-6 mb-16">
-              <HireMeModal>
-                <Button className="bg-orange-500 hover:bg-orange-600 px-10 py-4 text-lg transition-all duration-200 hover:shadow-lg">
-                  Contrate-me
-                </Button>
-              </HireMeModal>
-              <Button
-                variant="outline"
-                className="border-gray-600 dark:border-gray-500 text-gray-300 hover:border-orange-500 hover:text-orange-500 px-10 py-4 text-lg bg-transparent transition-all duration-200"
-              >
-                Baixe meu CV
-              </Button>
-            </div>
+            <MotionItem delay={0.7}>
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                <HireMeModal>
+                  <Button className="bg-orange-500 hover:bg-orange-600 px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-lg transition-all duration-200 hover:shadow-lg w-full sm:w-auto">
+                    Contrate-me
+                  </Button>
+                </HireMeModal>
+                <DownloadCVButton />
+              </div>
+            </MotionItem>
 
-            {/* Statistics */}
-            <div className="flex gap-12">
-              <div className="text-left">
-                <div className="text-4xl font-bold text-orange-500 mb-2 transition-colors duration-300">
-                  5+
-                </div>
-                <div className="text-gray-400 text-base transition-colors duration-300">
-                  Experiences
-                </div>
-              </div>
-              <div className="w-px h-16 bg-gray-600 dark:bg-gray-500 transition-colors duration-300"></div>
-              <div className="text-left">
-                <div className="text-4xl font-bold text-orange-500 mb-2 transition-colors duration-300">
-                  20+
-                </div>
-                <div className="text-gray-400 text-base transition-colors duration-300">
-                  Project done
-                </div>
-              </div>
-              <div className="w-px h-16 bg-gray-600 dark:bg-gray-500 transition-colors duration-300"></div>
-              <div className="text-left">
-                <div className="text-4xl font-bold text-orange-500 mb-2 transition-colors duration-300">
-                  80+
-                </div>
-                <div className="text-gray-400 text-base transition-colors duration-300">
-                  Happy Clients
-                </div>
-              </div>
-            </div>
           </MotionContainer>
         </div>
-        <MotionContainer className="flex justify-center">
-          <Image
-            src="/placeholder.svg?height=600&width=450"
-            alt="Front-End Developer"
-            width={450}
-            height={600}
-            className="rounded-lg"
-          />
+        <MotionContainer className="flex justify-center order-first lg:order-last">
+          <MotionItem>
+            <Image
+              src="/placeholder.svg?height=600&width=450"
+              alt="Front-End Developer"
+              width={450}
+              height={600}
+              className="rounded-lg w-full max-w-sm lg:max-w-md xl:max-w-lg"
+            />
+          </MotionItem>
         </MotionContainer>
       </div>
     </section>
