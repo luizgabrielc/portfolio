@@ -1,10 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import MotionContainer from "@/app/components/animations/motion-container";
-import MotionItem from "@/app/components/animations/motion-item";
-import { DownloadCVButton } from "@/app/components/download-cv-button";
+import MotionContainer from "@/app/[locale]/components/animations/motion-container";
+import MotionItem from "@/app/[locale]/components/animations/motion-item";
+import { DownloadCVButton } from "@/app/[locale]/components/download-cv-button";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 type skillType = { percentage: number, skill: string, icon: string, darkIcon?: string }
 
@@ -23,9 +25,14 @@ const skills: skillType[] = [
 
 export function AboutSection() {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const t = useTranslations('about')
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const getIconSrc = (item: skillType) => {
-    if (item.skill === "Next.js") {
+    if (item.skill === "Next.js" && mounted) {
       return theme === "dark" ? item.darkIcon : item.icon;
     }
     return item.icon;
@@ -40,13 +47,8 @@ export function AboutSection() {
         <MotionContainer className="text-center mb-12 sm:mb-16">
           <MotionItem delay={0.1}>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 transition-colors duration-300">
-              About Me
+              {t('title')}
             </h2>
-          </MotionItem>
-          <MotionItem delay={0.2}>
-            <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-base sm:text-lg transition-colors duration-300 px-4">
-              Desenvolvedor Full Stack apaixonado por criar soluções web modernas e escaláveis
-            </p>
           </MotionItem>
         </MotionContainer>
 
@@ -66,32 +68,25 @@ export function AboutSection() {
             </MotionItem>
           </MotionContainer>
           <MotionContainer className="flex flex-col gap-4" delay={0.4}>
+            
+          <MotionItem delay={0.2}>
+            <p className="text-gray-600 text-center dark:text-gray-400 max-w-3xl mx-auto text-base sm:text-2xl transition-colors duration-300 px-4">
+              {t('subtitle')}
+            </p>
+          </MotionItem>
             <MotionItem delay={0.1}>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base lg:text-lg transition-colors duration-300">
-                A software engineer, the modern-day architect of digital realms,
-                navigates the ethereal landscapes of code, sculpting intangible
-                structures that shape our technological world. With fingers
-                poised over keyboards like virtuoso pianists, they compose
-                symphonies of logic, their minds a labyrinth of algorithms and
-                solutions.
+              <p className="text-gray-600 dark:text-gray-400 mb-2 leading-relaxed text-sm sm:text-base lg:text-lg transition-colors duration-300">
+                {t('description1')}
               </p>
             </MotionItem>
             <MotionItem delay={0.2}>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base lg:text-lg transition-colors duration-300">
-                Their canvas is a screen, a vast expanse where lines of code
-                dance in intricate patterns, weaving the fabric of programs and
-                applications. Each keystroke is a brushstroke, crafting
-                intricate architectures and breathing life into innovative
-                designs.
+              <p className="text-gray-600 dark:text-gray-400 mb-2 leading-relaxed text-sm sm:text-base lg:text-lg transition-colors duration-300">
+                {t('description2')}
               </p>
             </MotionItem>
             <MotionItem delay={0.3}>
-              <p className="text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 leading-relaxed text-sm sm:text-base lg:text-lg transition-colors duration-300">
-                In this digital atelier, they don the mantle of problem solvers,
-                confronting bugs and glitches like valiant knights in an
-                ever-evolving quest for perfection. Debugging becomes a noble
-                pursuit, unraveling the mysteries hidden within the tangled webs
-                of code designs.
+              <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed text-sm sm:text-base lg:text-lg transition-colors duration-300">
+                {t('description3')}
               </p>
             </MotionItem>
             <MotionItem delay={0.4}>
@@ -143,7 +138,7 @@ export function AboutSection() {
                     />
                   </div>
                 </div>
-                <h3 className="font-semibold text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-400 transition-colors duration-300 group-hover:text-orange-500">
+                <h3 className="font-semibold text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-400 transition-colors duration-300 group-hover:text-orange-500 dark:group-hover:text-orange-500">
                   {item.skill}
                 </h3>
               </div>

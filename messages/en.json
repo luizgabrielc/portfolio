@@ -1,0 +1,150 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hello, I'm",
+    "name": "Luiz Gabriel",
+    "subtitle": "Full Stack Developer",
+    "description": "Specialist in creating innovative digital solutions and exceptional user experiences.",
+    "cta": "View Portfolio",
+    "downloadCV": "Download CV"
+  },
+  "services": {
+    "title": "My Services",
+    "subtitle": "What I can do for you",
+    "frontendDevelopment": {
+      "title": "Frontend Development",
+      "description": "Creation of modern and intuitive interfaces that provide exceptional experiences for your users."
+    },
+    "backendDevelopment": {
+      "title": "Backend Development",
+      "description": "Building robust and scalable systems that ensure performance and security for your application."
+    },
+    "fullStackApplications": {
+      "title": "Full Stack Applications",
+      "description": "Complete development of integrated web solutions, from conception to final implementation."
+    },
+    "databaseDesign": {
+      "title": "Database Design",
+      "description": "Modeling and implementation of efficient data structures that optimize application performance."
+    },
+    "devOpsDeployment": {
+      "title": "DevOps & Deployment",
+      "description": "Automation of development and deployment processes for faster and more reliable deliveries."
+    },
+    "testing": {
+      "title": "Testing & Quality",
+      "description": "Implementation of automated tests to ensure code quality and reliability."
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Get to know my journey",
+    "description1": "My passion for technology started early, when I discovered the power of creating digital solutions that can transform people's lives. The possibility of developing applications that solve real problems and improve user experience captivated me deeply, motivating me to pursue a career in development.",
+    "description2": "In March 2019, while still studying at UEMA, I began my professional journey as a fullstack freelancer. I developed various projects, from institutional websites and e-commerce platforms to management systems and customized web applications. Working as a fullstack freelancer, I learned to build all stages of the application from architecture, through development, testing and deployment. These projects provided me with practical experience with different technologies and frameworks, while teaching me the importance of delivering quality solutions within established deadlines.",
+    "description3": "In July 2022, I took an important step in my career when I was hired as a Front-End developer. This experience allowed me to enhance my skills in developing modern and responsive interfaces, working with agile teams and collaborative development methodologies. By hiring me, you'll have access to a professional committed to technical excellence, who combines creativity in problem-solving with practical experience in real projects, always focused on delivering results that exceed expectations.",
+    "experience": "Years of Experience",
+    "projects": "Completed Projects",
+    "clients": "Satisfied Clients"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "My recent works",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "categories": {
+      "all": "All",
+      "fullstack": "Full Stack",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "mobile": "Mobile"
+    },
+    "projects": {
+      "ecommerce": {
+        "title": "E-commerce React App",
+        "description": "Complete e-commerce application with shopping cart, payments and user system."
+      },
+      "taskManagement": {
+        "title": "Task Management App",
+        "description": "Task management application with drag-and-drop and real-time collaboration."
+      },
+      "socialDashboard": {
+        "title": "Social Media Dashboard",
+        "description": "Dashboard for social media analysis with interactive charts and real-time metrics."
+      },
+      "foodDelivery": {
+        "title": "Food Delivery App",
+        "description": "Food delivery application with geolocation and rating system."
+      },
+      "portfolio": {
+        "title": "Personal Portfolio",
+        "description": "Interactive portfolio with animations and dynamic sections for developers."
+      },
+      "chatApp": {
+        "title": "Chat Application",
+        "description": "Real-time chat application with group support and file sharing."
+      },
+      "weatherDashboard": {
+        "title": "Weather Dashboard",
+        "description": "Weather dashboard with detailed forecasts and interactive visualizations."
+      },
+      "fitnessTracking": {
+        "title": "Fitness Tracking App",
+        "description": "Fitness tracking app with gamification and wearable integration."
+      },
+      "musicStreaming": {
+        "title": "Music Streaming Interface",
+        "description": "Modern interface for music streaming application with personalized playlists."
+      },
+      "realEstate": {
+        "title": "Real Estate Platform",
+        "description": "Real estate platform with advanced search and 360° virtual tours."
+      },
+      "learningSystem": {
+        "title": "Learning Management System",
+        "description": "Learning management system with online courses and certificates."
+      },
+      "cryptoTracker": {
+        "title": "Crypto Portfolio Tracker",
+        "description": "Application for real-time cryptocurrency portfolio tracking."
+      }
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "showing": "Showing",
+      "of": "of",
+      "projects": "projects",
+      "in": "in"
+    },
+    "noProjects": "No projects found in this category yet. New projects will be added soon!"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Let's work together",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "phone": "Phone",
+    "address": "Address"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "madeWith": "Made with"
+  },
+  "common": {
+    "hireMe": "Hire Me",
+    "menu": "Menu",
+    "language": "Language",
+    "happyClients": "Happy Clients",
+    "projects": "Projects",
+    "yearsOfExperience": "Years of Experience",
+    "rights": "All rights reserved"
+  }
+} 

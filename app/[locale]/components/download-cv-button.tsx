@@ -2,12 +2,15 @@
 
 import { Button } from "@/shadcnui/ui/button"
 import { Download } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 interface DownloadCVButtonProps {
   color?: "orange" | "outline"
 }
 
 export function DownloadCVButton({ color = "outline" }: DownloadCVButtonProps) {
+  const t = useTranslations('hero')
+
   const handleDownloadCV = () => {
     // Create a link element
     const link = document.createElement('a')
@@ -35,7 +38,7 @@ export function DownloadCVButton({ color = "outline" }: DownloadCVButtonProps) {
       className={getButtonClasses()}
     >
       <Download className="w-4 h-4 sm:w-5 sm:h-5 animate-bounce" />
-      Baixe meu CV
+      {t('downloadCV')}
     </Button>
   )
 } 

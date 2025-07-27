@@ -1,0 +1,150 @@
+{
+  "navigation": {
+    "home": "Início",
+    "services": "Serviços",
+    "about": "Sobre mim",
+    "portfolio": "Portfólio",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "Olá, eu sou",
+    "name": "Luiz Gabriel",
+    "subtitle": "Desenvolvedor Full Stack",
+    "description": "Especialista em criar soluções digitais inovadoras e experiências de usuário excepcionais.",
+    "cta": "Ver Portfólio",
+    "downloadCV": "Baixar CV"
+  },
+  "services": {
+    "title": "Meus Serviços",
+    "subtitle": "O que posso fazer por você",
+    "frontendDevelopment": {
+      "title": "Desenvolvimento Frontend",
+      "description": "Criação de interfaces modernas e intuitivas que proporcionam experiências excepcionais para seus usuários."
+    },
+    "backendDevelopment": {
+      "title": "Desenvolvimento Backend",
+      "description": "Construção de sistemas robustos e escaláveis que garantem performance e segurança para sua aplicação."
+    },
+    "fullStackApplications": {
+      "title": "Aplicações Full Stack",
+      "description": "Desenvolvimento completo de soluções web integradas, desde a concepção até a implementação final."
+    },
+    "databaseDesign": {
+      "title": "Design de Banco de Dados",
+      "description": "Modelagem e implementação de estruturas de dados eficientes que otimizam o desempenho da aplicação."
+    },
+    "devOpsDeployment": {
+      "title": "DevOps & Deploy",
+      "description": "Automação de processos de desenvolvimento e deploy para entregas mais rápidas e confiáveis."
+    },
+    "testing": {
+      "title": "Testes & Qualidade",
+      "description": "Implementação de testes automatizados para garantir qualidade e confiabilidade do código."
+    }
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "subtitle": "Conheça minha jornada",
+    "description1": "Minha paixão pela tecnologia começou desde cedo, quando descobri o poder de criar soluções digitais que podem transformar a vida das pessoas. A possibilidade de desenvolver aplicações que resolvem problemas reais e melhoram a experiência dos usuários me cativou profundamente, motivando-me a seguir carreira na área de desenvolvimento.",
+    "description2": "Em março de 2019, ainda durante minha graduação na UEMA, comecei minha jornada profissional como freelancer fullstack. Desenvolvi projetos variados, desde sites institucionais e e-commerces até sistemas de gestão e aplicações web personalizadas. Trabalhando como fullstack freelancer, aprendi a construir todas as etapas da aplicação desde a arquitetura, passando pelo desenvolvimento, testes e deploy. Esses projetos me proporcionaram experiência prática com diferentes tecnologias e frameworks, além de me ensinar a importância de entregar soluções de qualidade dentro dos prazos estabelecidos.",
+    "description3": "Em julho de 2022, dei um importante passo em minha carreira ao ser contratado como desenvolvedor Front-End. Essa experiência me permitiu aprimorar minhas habilidades em desenvolvimento de interfaces modernas e responsivas, trabalhando com equipes ágeis e metodologias de desenvolvimento colaborativo. Ao me contratar, você terá acesso a um profissional comprometido com a excelência técnica, que combina criatividade na solução de problemas com experiência prática em projetos reais, sempre focado em entregar resultados que superem as expectativas.",
+    "experience": "Anos de Experiência",
+    "projects": "Projetos Concluídos",
+    "clients": "Clientes Satisfeitos"
+  },
+  "portfolio": {
+    "title": "Portfólio",
+    "subtitle": "Meus trabalhos recentes",
+    "viewProject": "Ver Projeto",
+    "viewCode": "Ver Código",
+    "categories": {
+      "all": "Todos",
+      "fullstack": "Full Stack",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "mobile": "Mobile"
+    },
+    "projects": {
+      "ecommerce": {
+        "title": "E-commerce React App",
+        "description": "Aplicação completa de e-commerce com carrinho de compras, pagamentos e sistema de usuários."
+      },
+      "taskManagement": {
+        "title": "Task Management App",
+        "description": "Aplicativo de gerenciamento de tarefas com drag-and-drop e colaboração em tempo real."
+      },
+      "socialDashboard": {
+        "title": "Social Media Dashboard",
+        "description": "Dashboard para análise de redes sociais com gráficos interativos e métricas em tempo real."
+      },
+      "foodDelivery": {
+        "title": "Food Delivery App",
+        "description": "Aplicativo de delivery de comida com geolocalização e sistema de avaliações."
+      },
+      "portfolio": {
+        "title": "Portfolio Personalizado",
+        "description": "Portfolio interativo com animações e seções dinâmicas para desenvolvedores."
+      },
+      "chatApp": {
+        "title": "Chat Application",
+        "description": "Aplicativo de chat em tempo real com suporte a grupos e arquivos."
+      },
+      "weatherDashboard": {
+        "title": "Weather Dashboard",
+        "description": "Dashboard meteorológico com previsões detalhadas e visualizações interativas."
+      },
+      "fitnessTracking": {
+        "title": "Fitness Tracking App",
+        "description": "App de acompanhamento fitness com gamificação e integração com wearables."
+      },
+      "musicStreaming": {
+        "title": "Music Streaming Interface",
+        "description": "Interface moderna para aplicativo de streaming de música com playlists personalizadas."
+      },
+      "realEstate": {
+        "title": "Real Estate Platform",
+        "description": "Plataforma imobiliária com busca avançada e tours virtuais 360°."
+      },
+      "learningSystem": {
+        "title": "Learning Management System",
+        "description": "Sistema de gestão de aprendizagem com cursos online e certificados."
+      },
+      "cryptoTracker": {
+        "title": "Crypto Portfolio Tracker",
+        "description": "Aplicativo para acompanhamento de portfólio de criptomoedas em tempo real."
+      }
+    },
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Próximo",
+      "showing": "Mostrando",
+      "of": "de",
+      "projects": "projetos",
+      "in": "em"
+    },
+    "noProjects": "Nenhum projeto encontrado nesta categoria ainda. Em breve novos projetos serão adicionados!"
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Vamos trabalhar juntos",
+    "name": "Nome",
+    "email": "Email",
+    "message": "Mensagem",
+    "send": "Enviar Mensagem",
+    "phone": "Telefone",
+    "address": "Endereço"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "madeWith": "Feito com"
+  },
+  "common": {
+    "hireMe": "Contrate-me",
+    "menu": "Menu",
+    "language": "Idioma",
+    "happyClients": "Clientes Felizes",
+    "projects": "Projetos",
+    "yearsOfExperience": "Anos de Experiência",
+    "rights": "Todos os direitos reservados"
+  }
+} 

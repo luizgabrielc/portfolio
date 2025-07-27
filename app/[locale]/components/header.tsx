@@ -1,9 +1,11 @@
 "use client"
 
 import { Button } from "@/shadcnui/ui/button"
-import ThemeToggle from "@/app/components/theme-toggle"
-import { HireMeModal } from "@/app/components/hire-me-modal"
-import { smoothScrollTo, scrollToTop } from "@/app/components/smooth-scroll"
+import ThemeToggle from "@/app/[locale]/components/theme-toggle"
+import { HireMeModal } from "@/app/[locale]/components/hire-me-modal"
+import { LanguageSelector } from "@/app/[locale]/components/language-selector"
+import { smoothScrollTo, scrollToTop } from "@/app/[locale]/components/smooth-scroll"
+import { useTranslations } from 'next-intl'
 import { Menu } from "lucide-react"
 import Image from "next/image"
 import {
@@ -15,12 +17,15 @@ import {
 } from "@/shadcnui/ui/drawer"
 
 export function Header() {
+  const t = useTranslations('navigation')
+  const tCommon = useTranslations('common')
+  
   const navItems = [
-    { name: "Home", action: scrollToTop },
-    { name: "Services", action: () => smoothScrollTo("services") },
-    { name: "About me", action: () => smoothScrollTo("about") },
-    { name: "Portfolio", action: () => smoothScrollTo("portfolio") },
-    { name: "Contact Us", action: () => smoothScrollTo("contact") },
+    { name: t('home'), action: scrollToTop },
+    { name: t('services'), action: () => smoothScrollTo("services") },
+    { name: t('about'), action: () => smoothScrollTo("about") },
+    { name: t('portfolio'), action: () => smoothScrollTo("portfolio") },
+    { name: t('contact'), action: () => smoothScrollTo("contact") },
   ]
 
   return (
@@ -47,10 +52,11 @@ export function Header() {
             </button>
           ))}
           <div className="flex items-center gap-3 lg:gap-4">
+            <LanguageSelector />
             <ThemeToggle />
             <HireMeModal>
               <Button className="bg-orange-500 hover:bg-orange-600 transition-all hover:shadow-lg text-xs sm:text-sm px-3 sm:px-4 py-2">
-                Contrate-me
+                {tCommon('hireMe')}
               </Button>
             </HireMeModal>
           </div>
@@ -58,6 +64,7 @@ export function Header() {
 
         {/* Mobile Menu Button */}
         <div className="flex items-center gap-3 sm:gap-4 md:hidden">
+          <LanguageSelector />
           <ThemeToggle />
           <Drawer>
             <DrawerTrigger asChild>
@@ -72,7 +79,7 @@ export function Header() {
             </DrawerTrigger>
             <DrawerContent>
               <DrawerHeader>
-                <DrawerTitle className="text-center">Menu</DrawerTitle>
+                <DrawerTitle className="text-center">{tCommon('menu')}</DrawerTitle>
               </DrawerHeader>
               <div className="px-4 py-4 space-y-2 sm:space-y-3">
                 {navItems.map((item) => (
@@ -86,7 +93,7 @@ export function Header() {
                 ))}
                 <HireMeModal>
                   <Button className="w-full bg-orange-500 hover:bg-orange-600 transition-all duration-200 mt-3 sm:mt-4 text-sm sm:text-base py-2 sm:py-3">
-                    Contrate-me
+                    {tCommon('hireMe')}
                   </Button>
                 </HireMeModal>
               </div>
