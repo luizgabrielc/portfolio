@@ -10,11 +10,12 @@ import {
   DropdownMenuTrigger,
 } from "@/shadcnui/ui/dropdown-menu"
 import { Globe } from "lucide-react"
+import Image from "next/image"
 
 const languages = [
-  { code: 'pt', name: 'Português', flag: '🇧🇷' },
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
+  { code: 'pt', name: 'Português', flag: '/countries/BR.svg' },
+  { code: 'en', name: 'English', flag: '/countries/US.svg' },
+  { code: 'es', name: 'Español', flag: '/countries/ES.svg' },
 ]
 
 export function LanguageSelector() {
@@ -40,7 +41,17 @@ export function LanguageSelector() {
           size="icon"
           className="text-gray-700 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-500"
         >
-          <Globe className="h-4 w-4 sm:h-5 sm:w-5" />
+          {currentLanguage ? (
+            <Image
+              src={currentLanguage.flag}
+              alt={`${currentLanguage.name} flag`}
+              width={20}
+              height={15}
+              className="rounded-sm"
+            />
+          ) : (
+            <Globe className="h-4 w-4 sm:h-5 sm:w-5" />
+          )}
           <span className="sr-only">{t('language')}</span>
         </Button>
       </DropdownMenuTrigger>
@@ -55,7 +66,13 @@ export function LanguageSelector() {
                 : 'hover:bg-gray-50 dark:hover:bg-gray-800'
             }`}
           >
-            <span className="mr-2">{language.flag}</span>
+            <Image
+              src={language.flag}
+              alt={`${language.name} flag`}
+              width={20}
+              height={15}
+              className="mr-2 rounded-sm"
+            />
             {language.name}
           </DropdownMenuItem>
         ))}

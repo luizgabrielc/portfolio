@@ -3,6 +3,7 @@
 
 import { ProgressProvider } from "@bprogress/next/app";
 import { ThemeProvider } from "next-themes";
+import { Toaster } from "@/shadcnui/ui/sonner";
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -19,6 +20,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
         shallowRouting
       >
         {children}
+        <Toaster />
       </ProgressProvider>
     </ThemeProvider>
   );
