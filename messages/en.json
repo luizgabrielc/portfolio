@@ -17,14 +17,7 @@
   "services": {
     "title": "My Services",
     "subtitle": "What I can do for you",
-    "frontendDevelopment": {
-      "title": "Frontend Development",
-      "description": "Creation of modern and intuitive interfaces that provide exceptional experiences for your users."
-    },
-    "backendDevelopment": {
-      "title": "Backend Development",
-      "description": "Building robust and scalable systems that ensure performance and security for your application."
-    },
+
     "fullStackApplications": {
       "title": "Full Stack Applications",
       "description": "Complete development of integrated web solutions, from conception to final implementation."
@@ -40,6 +33,14 @@
     "testing": {
       "title": "Testing & Quality",
       "description": "Implementation of automated tests to ensure code quality and reliability."
+    },
+    "mobileDevelopment": {
+      "title": "Mobile Development",
+      "description": "Creation of native and hybrid mobile applications with focus on performance and user experience."
+    },
+    "technologyConsulting": {
+      "title": "Technology Consulting",
+      "description": "Analysis and recommendation of personalized technological solutions to optimize your business processes."
     }
   },
   "about": {

@@ -93,7 +93,7 @@ export function HeroSection() {
         <MotionContainer className="flex justify-center order-first lg:order-last">
           <MotionItem>
             <Image
-              src="/placeholder.svg?height=600&width=450"
+              src="/picture-profile.jpeg"
               alt="Front-End Developer"
               width={450}
               height={600}

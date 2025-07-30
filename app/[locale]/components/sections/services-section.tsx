@@ -3,7 +3,7 @@
 import MotionContainer from "@/app/[locale]/components/animations/motion-container"
 import MotionItem from "@/app/[locale]/components/animations/motion-item"
 import { useTranslations } from "next-intl"
-import { FaReact, FaNodeJs, FaDatabase, FaAws, FaVial } from "react-icons/fa"
+import { FaReact, FaNodeJs, FaDatabase, FaAws, FaVial, FaMobile, FaLightbulb } from "react-icons/fa"
 
 // Custom icon component for full stack
 const FullStackIcon = () => (
@@ -18,19 +18,19 @@ export function ServicesSection() {
   
   const services = [
     {
-      icon: FaReact,
-      title: t('frontendDevelopment.title'),
-      description: t('frontendDevelopment.description'),
-    },
-    {
-      icon: FaNodeJs,
-      title: t('backendDevelopment.title'),
-      description: t('backendDevelopment.description'),
-    },
-    {
       icon: FullStackIcon,
       title: t('fullStackApplications.title'),
       description: t('fullStackApplications.description'),
+    },
+    {
+      icon: FaMobile,
+      title: t('mobileDevelopment.title'),
+      description: t('mobileDevelopment.description'),
+    },
+    {
+      icon: FaLightbulb,
+      title: t('technologyConsulting.title'),
+      description: t('technologyConsulting.description'),
     },
     {
       icon: FaDatabase,

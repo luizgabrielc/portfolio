@@ -59,7 +59,7 @@ export function AboutSection() {
           >
             <MotionItem>
               <Image
-                src="/placeholder.svg?height=700&width=500"
+                src="/picture-profile-animated.jpg"
                 alt="About Me"
                 width={500}
                 height={700}
